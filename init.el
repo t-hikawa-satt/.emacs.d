@@ -15,7 +15,8 @@
 
 ;; column && line num
 (column-number-mode t)
-(global-linum-mode t)
+;; (global-linum-mode t)
+(global-display-line-numbers-mode t)
 
 ;; highlight in cursor line
 (global-hl-line-mode t)
@@ -49,7 +50,6 @@
 (setq initial-scratch-message nil)
 
 ;; fonts
-;; (when window-system)
 (set-face-attribute 'default nil
                     :family "PlemolJP HS"
                     :height 96
@@ -138,10 +138,6 @@
 ;;;;;;;;;;;
 ;; input ;;
 ;;;;;;;;;;;
-;;(global-set-key (kbd "C-|") 'mozc-mode)
-;;(require 'mozc)
-;;(set-language-environment "Japanese")
-;;(setq default-input-method "japanese-mozc")
 
 ;; character code
 (set-language-environment  'utf-8)
@@ -153,12 +149,6 @@
 
 ;; parenthesis
 (show-paren-mode 1)
-
-(when (>= emacs-major-version 27)
-  (require 'smartparens-config)
-  (smartparens-global-mode t)
-  ;; (show-smartparens-global-mode t)
-)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
@@ -190,8 +180,6 @@
 (global-set-key (kbd "M-l") 'forward-word)
 (global-set-key (kbd "C-p") 'backward-paragraph)
 (global-set-key (kbd "C-n") 'forward-paragraph)
-;;(global-set-key (kbd "C-p") '(lambda () (interactive) (previous-line 5)))
-;;(global-set-key (kbd "C-n") '(lambda () (interactive) (next-line 5)))
 
 (defun beginning-of-line-or-indentation ()
   (interactive)
@@ -203,12 +191,6 @@
     (global-set-key (kbd "C-a") 'beginning-of-line)
   (global-set-key (kbd "C-a") 'beginning-of-line-or-indentation)
 )
-
-;;(require 'multiple-cursors)
-;;(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-;;(global-set-key (kbd "C-M-j")       'mc/mark-next-like-this)
-;;(global-set-key (kbd "C-M-k")       'mc/mark-previous-like-this)
-;;(global-set-key (kbd "C-c C-<")     'mc/mark-all-like-this)
 
 ;; scroll
 (global-set-key (kbd "M-p") 'scroll-down-command)
@@ -229,12 +211,8 @@
 (global-set-key (kbd "C-c w") 'window-resizer)
 
 ;; system
-;; quickrun
 (global-set-key (kbd "C-c C-q") 'quickrun)
 (global-set-key (kbd "C-c q") 'quickrun)
-;; shell
-;;(global-set-key (kbd "C-c C-s") 'shell)
-;;(global-set-key (kbd "C-c C-s") 'ansi-term)
 
 ;; git
 (global-set-key (kbd "C-x g") 'magit-status)
